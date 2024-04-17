@@ -1,0 +1,36 @@
+{% extends '../index_master.html' %}
+
+{% block content %}
+
+    <!-- page content -->
+        <div class="right_col" role="main">
+            <h1>LISTAR</h1>
+
+            <table class="table ">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Telefono</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for u in usuarios %}
+                  <tr>
+                    <th scope="row">{{u.id}}</th>
+                    <td>{{ u.nombre}}</td>
+                    <td>{{ u.apellido}}</td>
+                    <td>{{ u.correo}}</td>
+                    <td>{{ u.telefono}}</td>
+                  </tr>
+                  {% endfor%}
+                </tbody>
+              
+              </table>
+              How to use it?
+
+        </div>
+    <!-- page content -->
+{% endblock %}

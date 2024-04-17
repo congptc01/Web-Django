@@ -1,0 +1,35 @@
+{% extends '../index_master.html' %}
+
+{% block content %}
+
+    <!-- page content -->
+        <div class="right_col" role="main">
+            <h1>ELIMINAR</h1>
+            <form action="eliminar" method="POST">
+                {% csrf_token %}
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="id">ID de Usuario</label>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-address-card-o"></i>
+                                </div>
+                            </div>
+                            <select id="id" name="id">
+                                {% for u in usuarios %}
+                                <option value="{{u.id}}">{{ u.id}}</option>
+                                {% endfor %}
+                            <select>
+                        </div>
+                    </div>
+                </div>                                               
+                <div class="form-group row">
+                    <div class="col-sm-10 offset-sm-2">
+                        <button name="submit" type="submit" class="btn btn-danger"><i class="fa fa-danger"></i>Eliminar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    <!-- page content -->
+{% endblock %}
